@@ -27,7 +27,7 @@ class Webpacker::Env
 
     def available_environments
       if config_path.exist?
-        YAML.load(config_path.read).keys
+        YAML.load(config_path.read, aliases: true).keys
       else
         [].freeze
       end
